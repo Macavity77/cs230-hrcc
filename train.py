@@ -21,7 +21,7 @@ img_size=[96,96]
 channels=1
 
 save_path='/home/ubuntu/cs230-hrcc/checkpoint' #path for model training checkpoint
-train_dir='/home/ubuntu/cs230-hrcc/train'      #train data path, png file, preprocessed in M1 code
+train_dir='/home/ubuntu/data/train'      #train data path, png file, preprocessed in M1 code
 log_dir = '/home/ubuntu/cs230-hrcc/log'        #log data path
 
 aug=False #image argumentation

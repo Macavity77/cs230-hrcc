@@ -11,7 +11,7 @@ img_size=[96,96]
 channels=1
 
 save_path='/home/ubuntu/cs230-hrcc/checkpoint'     #model path
-test_dir='/home/ubuntu/cs230-hrcc/checkpoint/test' #test data path
+test_dir='/home/ubuntu/data/test' #test data path
 
 files=[]
 labels=[]
@@ -35,7 +35,7 @@ with tf.Graph().as_default() as g:
     files=tf.constant(files)
     labels=tf.constant(labels)
 
-    dataset = tf.contrib.data.Dataset.from_tensor_slices((files, labels))
+    dataset = tf.data.Dataset.from_tensor_slices((files, labels))
     dataset = dataset.map(_parse_function)#,num_parallel_calls=4)
     dataset = dataset.batch(batch_size)
     
