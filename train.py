@@ -20,9 +20,9 @@ batch_size = 128
 img_size=[96,96]
 channels=1
 
-save_path='/home/ubuntu/HCCR-HWDB-tensorflow/checkpoint' #path for model training checkpoint
-train_dir='/home/ubuntu/HCCR-HWDB-tensorflow/train'      #train data path, png file, preprocessed in M1 code
-log_dir = '/home/ubuntu/HCCR-HWDB-tensorflow/log'        #log data path
+save_path='/home/ubuntu/cs230-hrcc/checkpoint' #path for model training checkpoint
+train_dir='/home/ubuntu/cs230-hrcc/train'      #train data path, png file, preprocessed in M1 code
+log_dir = '/home/ubuntu/cs230-hrcc/log'        #log data path
 
 aug=False #image argumentation
 resume=False #resume training using checkpointer files

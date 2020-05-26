@@ -10,8 +10,8 @@ batch_size = 64
 img_size=[96,96]
 channels=1
 
-save_path='/.../.../checkpoint' #模型保存路径
-test_dir='/.../.../test'        #测试图片路径
+save_path='/home/ubuntu/cs230-hrcc/checkpoint'     #model path
+test_dir='/home/ubuntu/cs230-hrcc/checkpoint/test' #test data path
 
 files=[]
 labels=[]
