@@ -1,0 +1,6 @@
+model_checkpoint_path: "/home/ubuntu/HCCR-HWDB-tensorflow/checkpoint/trainnum_30000_-30000"
+all_model_checkpoint_paths: "/home/ubuntu/HCCR-HWDB-tensorflow/checkpoint/trainnum_30000_-7001"
+all_model_checkpoint_paths: "/home/ubuntu/HCCR-HWDB-tensorflow/checkpoint/trainnum_30000_-14001"
+all_model_checkpoint_paths: "/home/ubuntu/HCCR-HWDB-tensorflow/checkpoint/trainnum_30000_-21001"
+all_model_checkpoint_paths: "/home/ubuntu/HCCR-HWDB-tensorflow/checkpoint/trainnum_30000_-28001"
+all_model_checkpoint_paths: "/home/ubuntu/HCCR-HWDB-tensorflow/checkpoint/trainnum_30000_-30000"
