@@ -32,6 +32,7 @@ with tf.Graph().as_default() as g:
             files.append(test_dir + '/'+label_name+'/'+file_name)
             labels.append(int(label_name))
 
+    print("total number of test pics is %d " %len(files))
     files=tf.constant(files)
     labels=tf.constant(labels)
 
@@ -47,10 +48,7 @@ with tf.Graph().as_default() as g:
     accuracy_top1_batch = tf.reduce_mean(tf.cast(tf.nn.in_top_k(prob_batch, label_batch, 1), tf.float32))
     accuracy_top5_batch = tf.reduce_mean(tf.cast(tf.nn.in_top_k(prob_batch, label_batch, 5), tf.float32))
     accuracy_top10_batch = tf.reduce_mean(tf.cast(tf.nn.in_top_k(prob_batch, label_batch, 10), tf.float32))
-    '''
-    variable_ave = tf.train.ExponentialMovingAverage(0.99)
-    variables_to_restore = variable_ave.variables_to_restore()
-    '''
+
     saver=tf.train.Saver()
     
     with tf.Session() as sess:
@@ -71,9 +69,9 @@ with tf.Graph().as_default() as g:
                     top5sum=top5sum+top5
                     top10sum=top10sum+top10
                     if iternum%500==0:
-                        print("The current test accuracy (in %d pics) = top1: %g , top5: %g ，top10: %g." % (iternum*batch_size,top1sum/iternum,top5sum/iternum,top10sum/iternum))
+                        print("The current test accuracy (in %d pics) = top1: %g, top5: %g, top10: %g." % (iternum*batch_size,top1sum/iternum,top5sum/iternum,top10sum/iternum))
                 except tf.errors.OutOfRangeError:
-                    print("The final test accuracy (in %d pics) = top1: %g , top5: %g ，top10: %g." % (iternum*batch_size,top1sum/iternum,top5sum/iternum,top10sum/iternum))
+                    print("The final test accuracy (in %d pics) = top1: %g, top5: %g, top10: %g." % (iternum*batch_size,top1sum/iternum,top5sum/iternum,top10sum/iternum))
                     print('Test finished...')
                     break
         else:

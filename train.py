@@ -30,10 +30,6 @@ resume=False #resume training using checkpointer files
 file_and_label=[]
 files=[]
 labels=[]
-'''
-losslist = []
-accuracy = []
-'''
 os.environ['CUDA_VISIBLE_DEVICES']=gpunum
 
 
@@ -141,19 +137,6 @@ with tf.Session() as sess:
         if u.interrupted:
                     print("Interrupted on request...")
                     break
-
-    '''
-    file1=open(log_dir+'/loss.txt','a')
-    for loss in losslist:
-          loss = str(loss).strip('[').strip(']').replace(',','')
-          file1.write(loss+'\n')
-    file1.close()
-    file2=open(log_dir+'/accu.txt','a')
-    for acc in accuracy:
-          acc = str(acc).strip('[').strip(']').replace(',','')
-          file2.write(acc+'\n')
-    file2.close()
-    '''
 
     model_name="trainnum_%d_"%train_nums
     saver.save(sess,os.path.join(save_path,model_name),global_step=global_step)

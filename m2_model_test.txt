@@ -1,0 +1,8 @@
+The current test accuracy (in 32000 pics) = top1: 0.951812 , top5: 0.990906 ，top10: 0.995.
+The current test accuracy (in 64000 pics) = top1: 0.951719 , top5: 0.990641 ，top10: 0.994625.
+The current test accuracy (in 96000 pics) = top1: 0.951292 , top5: 0.990583 ，top10: 0.994833.
+The current test accuracy (in 128000 pics) = top1: 0.950867 , top5: 0.990289 ，top10: 0.994617.
+The current test accuracy (in 160000 pics) = top1: 0.950806 , top5: 0.990387 ，top10: 0.994725.
+The current test accuracy (in 192000 pics) = top1: 0.950641 , top5: 0.990422 ，top10: 0.994724.
+The current test accuracy (in 224000 pics) = top1: 0.950741 , top5: 0.990455 ，top10: 0.994746.
+The final test accuracy (in 224000 pics) = top1: 0.950741 , top5: 0.990455 ，top10: 0.994746.
