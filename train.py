@@ -6,8 +6,8 @@ import lbtoolbox as lb
 from models import hccr_cnnnet
 
 gpunum='0'
-lr_base=0.1
-lr_decay=0.1
+lr_base=0.01
+lr_decay=0.01
 momentum=0.9
 lr_steps=7000
 save_steps=7000
@@ -88,7 +88,7 @@ else:
     loss=cross_entropy_mean+tf.add_n(tf.get_collection('losses'))
 
 lr=tf.train.exponential_decay(lr_base,global_step,lr_steps,lr_decay,staircase=True)
-train_step = tf.train.MomentumOptimizer(learning_rate=lr,momentum=momentum)
+train_step = tf.train.AdamOptimizer(learning_rate=lr)
 
 with tf.control_dependencies(update_op):
     grads = train_step.compute_gradients(loss)
@@ -138,7 +138,7 @@ with tf.Session() as sess:
                     print("Interrupted on request...")
                     break
 
-    model_name="trainnum_%d_"%train_nums
+    model_name="trainnum_%d_%f_"%(train_nums, lr_base)
     saver.save(sess,os.path.join(save_path,model_name),global_step=global_step)
     print('Train finished...')
 
