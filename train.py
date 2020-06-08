@@ -6,8 +6,8 @@ import lbtoolbox as lb
 from models import hccr_cnnnet
 
 gpunum='0'
-lr_base=0.01
-lr_decay=0.01
+lr_base=0.00006
+lr_decay=0.00006
 momentum=0.9
 lr_steps=7000
 save_steps=7000
